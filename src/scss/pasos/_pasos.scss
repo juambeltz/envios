@@ -1,0 +1,40 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.pasos{
+    margin-top: 5rem;
+
+    &__wave{
+        width: 100%;
+    }
+
+    &__contenido {
+        background-color: v.$primario;
+        margin-top: -1px;
+        /*elimina la linea que queda entre la imagen y el div*/        
+    }
+
+    &__heading{
+        color: v.$blanco;
+        text-align: center;           
+        
+        &--descripcion{
+            font-size: 1.8rem;
+            display: block;
+        }
+    }
+
+    &__grid{
+       @include m.tablet {
+        @include m.grid(3, 5rem);
+       }
+    }
+
+    &__imagen{
+        transition: transform 300ms ease-in-out;
+        &:hover{
+            transform: rotate(-5deg) scale(1.15);
+        }
+    }
+}
+
